@@ -1,0 +1,34 @@
+[book]
+title = "RustBook Documentation"
+description = "Create book from markdown files. Like Gitbook but implemented in Rust"
+authors = ["shichong.liu"]
+language = "en"
+
+[rust]
+edition = "2021"
+
+[output.html]
+smart-punctuation = true
+mathjax-support = true
+site-url = "/wuaikaiyuan.github.io/"
+git-repository-url = "https://github.com/wuaikaiyuan/wuaikaiyuan.github.io/tree/main/guide"
+edit-url-template = "https://github.com/wuaikaiyuan/wuaikaiyuan.github.io/edit/main/guide/{path}"
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.code.hidelines]
+python = "~"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.redirect]
+"/format/config.html" = "configuration/index.html"
