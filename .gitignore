@@ -1,0 +1,14 @@
+target
+
+book-test
+
+guide/book
+
+.vscode
+
+# Ignore Jetbrains specific files.
+.idea/
+
+# Ignore Vim temporary and swap files.
+*.sw?
+*~
