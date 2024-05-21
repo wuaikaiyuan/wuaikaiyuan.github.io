@@ -35,7 +35,7 @@ jobs:
       run: ci/make-release-asset.sh ${{ matrix.os }} ${{ matrix.target }}
     - name: Update release with new asset
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.WUAIKAIYUAN_GITHUB_TOKEN }}
       run: gh release upload $MDBOOK_TAG $MDBOOK_ASSET
   pages:
     name: GitHub Pages
