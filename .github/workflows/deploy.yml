@@ -52,11 +52,12 @@ jobs:
 #      run: cargo run -- build guide
     - name: Install latest mdbook
       run: |
-        tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
-        url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
-        mkdir mdbook
-        curl -sSL $url | tar -xz --directory=./mdbook
-        echo `pwd`/mdbook >> $GITHUB_PATH
+#        tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
+#        url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
+#        mkdir mdbook
+#        curl -sSL $url | tar -xz --directory=./mdbook
+#        echo `pwd`/mdbook >> $GITHUB_PATH
+        cargo install mdbook
     - name: Build Book
       run: |
         # This assumes your book is in the root of your repository.
@@ -68,7 +69,6 @@ jobs:
       env:
         GITHUB_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
       run: |
-        pwd
         touch guide/book/.nojekyll
         curl -LsSf https://raw.githubusercontent.com/rust-lang/simpleinfra/master/setup-deploy-keys/src/deploy.rs | rustc - -o /tmp/deploy
         cd guide/book
