@@ -1,4 +1,4 @@
 
 fn main() {
-	println!("wuaikaiyuan.github.io");
+	println!("wuaikaiyuan.github.io:: rustbook document website");
 }
