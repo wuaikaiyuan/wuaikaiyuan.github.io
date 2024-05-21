@@ -40,4 +40,5 @@ fi
 rustup default $TOOLCHAIN
 rustup -V
 rustc -Vv
+
 cargo -V
