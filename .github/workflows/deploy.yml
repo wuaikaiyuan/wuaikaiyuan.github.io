@@ -2,14 +2,11 @@ name: Deploy
 on:
   release:
     types: [created]
-
 defaults:
   run:
     shell: bash
-
 permissions:
   contents: write
-
 jobs:
   release:
     runs-on: ${{ matrix.os }}
