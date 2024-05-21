@@ -2,7 +2,7 @@ name: Deploy-mdbook-only
 on:
   push:
     branches:
-      - main
+      - main-xx
 
 jobs:
   deploy:
