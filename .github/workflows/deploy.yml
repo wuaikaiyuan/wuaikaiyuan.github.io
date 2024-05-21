@@ -15,8 +15,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04]
-        target: [x86_64-unknown-linux-gnu]
         include:
           - target: aarch64-unknown-linux-musl
             os: ubuntu-20.04
@@ -67,7 +65,6 @@ jobs:
         GITHUB_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
       run: |
         pwd
-        cd ..
         touch guide/book/.nojekyll
         curl -LsSf https://raw.githubusercontent.com/rust-lang/simpleinfra/master/setup-deploy-keys/src/deploy.rs | rustc - -o /tmp/deploy
         cd guide/book
