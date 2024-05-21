@@ -18,7 +18,7 @@ jobs:
       pages: write  # To push to a GitHub Pages site
       id-token: write # To update the deployment status    
     strategy:
-      matrix:        
+      matrix:
         include:
           - target: aarch64-unknown-linux-musl
             os: ubuntu-20.04
@@ -68,6 +68,7 @@ jobs:
       env:
         GITHUB_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
       run: |
+        pwd
         touch guide/book/.nojekyll
         curl -LsSf https://raw.githubusercontent.com/rust-lang/simpleinfra/master/setup-deploy-keys/src/deploy.rs | rustc - -o /tmp/deploy
         cd guide/book
