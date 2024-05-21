@@ -66,6 +66,8 @@ jobs:
       env:
         GITHUB_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
       run: |
+        pwd
+        cd ..
         touch guide/book/.nojekyll
         curl -LsSf https://raw.githubusercontent.com/rust-lang/simpleinfra/master/setup-deploy-keys/src/deploy.rs | rustc - -o /tmp/deploy
         cd guide/book
